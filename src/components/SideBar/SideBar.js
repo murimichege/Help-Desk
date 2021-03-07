@@ -1,8 +1,9 @@
 import React from 'react'
 import {SideBarData} from '../SideBar/SideBarData'
+
 function SideBar() {
   return (
-    <div className="Sidebar">
+    <div className="SideBar">
       <div className="SideBarList">
       <ul>
       {
