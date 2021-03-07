@@ -10,29 +10,29 @@ export const SideBarData =
     {
         title: "DashBoard",
         icon: <DashboardIcon/>,
-        link:""
+        link:"/dashboard"
     },
     {
         title: "Tickets",
         icon: <StorageIcon/>,
-        link:""
+        link:"/tickets"
     },
 
     {
         title: "Users",
         icon: <PersonIcon/>,
-        link:""
+        link:"/Users"
     },
   
     {
         title: "All Tickets",
         icon: <AddBoxIcon/>,
-        link:""
+        link:"/allTickets"
     },
     {
         title: "Analytics",
         icon: <PieChartIcon/>,
-        link:""
+        link:"/analytics"
     },
 
 ]
