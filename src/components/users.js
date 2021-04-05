@@ -7,10 +7,9 @@ export const UsersList = props => (
             <TextField source="id"/>
             <TextField source="name"/>
             <TextField source="username"/>
-            <TextField source="address.street" />
-            <TextField source="phone" />
-            <TextField source="website" />
-            <TextField source="company.name"/>
+            <TextField source="department" />
+            <TextField source="phone number" />
+            <EmailField source="email"/>
 
         </Datagrid>
 
