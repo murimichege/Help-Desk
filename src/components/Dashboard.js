@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader } from '@material-ui/core';
 function Dashboard() {
   const useStyles = makeStyles((theme) => ({
     root: {
-      flexGrow: 1,
+      flexGrow: 3,
     },
     paper: {
       padding: theme.spacing(2),
@@ -17,7 +17,6 @@ function Dashboard() {
     },
     Dashboard: {
       backgroundColor: 'lightgrey'
-
     }
   }));
   const classes = useStyles();
@@ -31,13 +30,13 @@ function Dashboard() {
     <div className={classes.root}>
       <Grid container spacing={3}>
         <Grid item xs>
-          <Paper className={classes.paper}>xs</Paper>
+          <Paper className={classes.paper} elevation={1}>Total Tickets</Paper>
         </Grid>
         <Grid item xs>
-          <Paper className={classes.paper}>xs</Paper>
+          <Paper className={classes.paper} elevation={1}>Open Tickets</Paper>
         </Grid>
         <Grid item xs>
-          <Paper className={classes.paper}>xs</Paper>
+          <Paper className={classes.paper} elevation={1}>Closed Tickets</Paper>
         </Grid>
       </Grid>
     </div>
