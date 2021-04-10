@@ -15,12 +15,18 @@ function Dashboard() {
       textAlign: 'center',
       color: theme.palette.text.secondary,
     },
+    Dashboard: {
+      backgroundColor: 'lightgrey'
+
+    }
   }));
   const classes = useStyles();
 
   return (
     <Card>
+      <div className={classes.Dashboard}>
       <CardHeader title="Dashboard"/>
+      </div>
       <CardContent>
     <div className={classes.root}>
       <Grid container spacing={3}>
