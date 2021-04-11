@@ -5,7 +5,6 @@ export const TicketsList = props => (
     <List {...props}>
         <Datagrid>
         <TextField source="id"/>
-
             <ReferenceField source="userId" reference="users">
                 <TextField source="name"/>
             </ReferenceField>

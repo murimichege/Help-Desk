@@ -28,7 +28,7 @@ function Dashboard() {
       </div>
       <CardContent>
     <div className={classes.root}>
-      <Grid container spacing={3}>
+      <Grid container spacing={3} height={5}>
         <Grid item xs>
           <Paper className={classes.paper} elevation={1}>Total Tickets</Paper>
         </Grid>
