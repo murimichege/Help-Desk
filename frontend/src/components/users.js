@@ -1,5 +1,5 @@
 import React from 'react'
-import { List, Datagrid, TextField, EmailField} from 'react-admin'
+import { List, Datagrid, TextField, EmailField} from '../../frontend/node_modules/react-admin'
 
 export const UsersList = props => (
     <List {...props}>
@@ -7,8 +7,12 @@ export const UsersList = props => (
             <TextField source="id"/>
             <TextField source="name"/>
             <TextField source="username"/>
-            <TextField source="department" />
-            <TextField source="phone number" />
+            <TextField source="Title" />
+            <TextField source="Status" />
+            <TextField source="Priority" />
+            <TextField source="Category" />
+            <TextField source="Status" />
+
             <EmailField source="email"/>
         </Datagrid>
 
