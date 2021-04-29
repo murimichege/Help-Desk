@@ -1,5 +1,5 @@
 import React from 'react'
-import { List, Datagrid, TextField, EmailField, ReferenceField, EditButton} from '../../frontend/node_modules/react-admin'
+import { List, Datagrid, TextField, EmailField, ReferenceField, EditButton} from 'react-admin'
 
 export const TicketsList = props => (
     <List {...props}>

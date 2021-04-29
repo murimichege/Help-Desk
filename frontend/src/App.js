@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css';
-import { Admin, Resource } from '../frontend/node_modules/react-admin';
-import jsonServerProvider from '../frontend/node_modules/ra-data-json-server';
+import { Admin, Resource } from 'react-admin';
+import jsonServerProvider from 'ra-data-json-server';
 
 import {UsersList} from './components/users'
 import {TicketsList} from './components/Tickets'
