@@ -1,6 +1,6 @@
-import express from 'express'
-import mongoose from 'mongoose'
-import bodyParser from 'body-parser'
+const express = require("express");
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 
 // starts the app
 const app = express();
@@ -11,6 +11,7 @@ app.use(
         extended: false
     })
 )
+
 app.use(bodyParser.json())
 // database configuration
 const db = require('./config/keys')
@@ -18,7 +19,12 @@ const db = require('./config/keys')
 mongoose
 .connect
 (db,
-{useNewUrlParser: true})
+{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+},
+
+)
 .then(()=> console.log('Database connected successfully'))
 .catch((err) => console.log(err))
 
