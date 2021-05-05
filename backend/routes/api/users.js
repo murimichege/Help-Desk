@@ -14,7 +14,7 @@ const User = require('../../models/user')
 
 
 router.post('/register', (req, res) => {
-    const {error, isValid} = validateRegisterInput(req.body)
+    const {errors, isValid} = validateRegisterInput(req.body)
 
     if(!isValid){
         return res.status(400).json(errors)
@@ -41,12 +41,6 @@ router.post('/register', (req, res) => {
         .catch(err => console.log(err))
     })
 })
-
-
         }
     })
-   
-
-
-
 })
