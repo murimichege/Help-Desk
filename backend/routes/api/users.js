@@ -47,7 +47,7 @@ router.post('/register', (req, res) => {
 })
 
 // route to login
-route.post('/login', (res, req) => {
+router.post('/login', (res, req) => {
     const {errors, isValid} = validateLoginInput(req.body)
 
     if(!isValid){
@@ -76,6 +76,8 @@ route.post('/login', (res, req) => {
                     id: user.id,
                     name : user.name
                 };
+                        // Sign token
+
                 jwt.sign(
                     payload,
                     keys.secretOrKey
@@ -95,14 +97,7 @@ route.post('/login', (res, req) => {
                 res.status(400).json({passwordincorrect: "Password Entered is incorrect"})
             }
         })
-        // Sign token
-     
-
+    
     })
-    
-    
-
-
-
 })
 module.exports = router;
