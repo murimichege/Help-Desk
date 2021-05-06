@@ -105,4 +105,4 @@ route.post('/login', (res, req) => {
 
 
 })
-module.exports(router)
+module.exports = router;
