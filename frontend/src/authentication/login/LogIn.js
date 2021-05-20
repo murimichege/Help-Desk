@@ -1,10 +1,9 @@
 import React, {useState} from "react";
 
 function LogIn() {
-    const [] = useState()
-
+    
     return(
-        <form>
+        <form onSubmit={handleSubmit}>
             <div className = "form-group">
                 <label>
                     Full Name
@@ -15,6 +14,7 @@ function LogIn() {
 
             <div className = "form-group">
                 <label>Email</label>
+
                 <input type="text" className="form-group" placeholder="email"/>
                 
             </div>
@@ -23,6 +23,12 @@ function LogIn() {
              <label>Password</label>
                 <input type="text" className="form-group" placeholder="password"/>
             </div>
+
+            <div className = "form-group">
+             <label>Password1</label>
+                <input type="text" className="form-group" placeholder="password"/>
+            </div>
+
             <p className="forgot-password">
                 Forgot Password? <a href="">Login</a>
             </p>

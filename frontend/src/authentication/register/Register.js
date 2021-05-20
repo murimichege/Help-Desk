@@ -1,14 +1,41 @@
 import React from "react";
 
 function Register() {
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const [password1, setPassword1] = useState("")
+
+const handleSubmit = (event) => {
+    alert(name + "was created successfully")
+    event.preventDefault()
+}
+const handleChange = (event) => {
+    
+
+}
+const newUser = {
+    name: name,
+    email: email,
+    password: password,
+    password1: password1
+}
+console.log(newUser)
 
     return(
-        <form>
+        <form onSubmit={handleSubmit}>
             <div className = "form-group">
                 <label>
                     Full Name
                 </label>
-                <input type="text" className="form-group" placeholder="name" />
+                <input
+                type="text"
+                className="form-group"
+                placeholder="name"
+                
+                
+                
+                />
 
             </div>
 
