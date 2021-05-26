@@ -4,7 +4,7 @@ function LogIn() {
 
     
     return(
-        <form>
+        <form className="">
             <div className = "form-group">
                 <label>
                     Full Name
