@@ -32,11 +32,7 @@ console.log(newUser)
                 type="text"
                 className="form-group"
                 placeholder="name"
-                
-                
-                
                 />
-
             </div>
 
             <div className = "form-group">
@@ -47,6 +43,10 @@ console.log(newUser)
 
             <div className = "form-group">
              <label>Password</label>
+                <input type="text" className="form-group" placeholder="password"/>
+            </div>
+            <div className = "form-group">
+             <label>Confirm Password</label>
                 <input type="text" className="form-group" placeholder="password"/>
             </div>
             <p className="forgot-password">
