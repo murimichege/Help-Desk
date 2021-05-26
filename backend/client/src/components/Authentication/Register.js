@@ -1,8 +1,15 @@
-import React, {useState, } from 'react'
+import React, {useState, useEffect} from 'react'
 
 function Register() {
+    const [username, setUserName] = useState("")
+    const 
+
+    
     return (
-        <div class>
+        <div className="Register">
+            <form>
+
+            </form>
             
         </div>
     )
