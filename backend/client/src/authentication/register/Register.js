@@ -1,5 +1,5 @@
 import React from "react";
-
+import {Link } from 'react-router-dom';
 function Register() {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
@@ -10,10 +10,7 @@ const handleSubmit = (event) => {
     alert(name + "was created successfully")
     event.preventDefault()
 }
-const handleChange = (event) => {
-    
 
-}
 const newUser = {
     name: name,
     email: email,
@@ -21,6 +18,7 @@ const newUser = {
     password1: password1
 }
 console.log(newUser)
+
 
     return(
         <form onSubmit={handleSubmit}>
