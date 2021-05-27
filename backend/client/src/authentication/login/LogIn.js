@@ -1,9 +1,10 @@
 import React, {useState} from "react";
 
 function LogIn() {
+
     
     return(
-        <form onSubmit={handleSubmit}>
+        <form className="">
             <div className = "form-group">
                 <label>
                     Full Name

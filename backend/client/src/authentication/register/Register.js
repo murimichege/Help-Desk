@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {Link } from 'react-router-dom';
 function Register() {
     const [name, setName] = useState("")
@@ -48,7 +48,7 @@ console.log(newUser)
                 <input type="text" className="form-group" placeholder="password"/>
             </div>
             <p className="forgot-password">
-                Already Registered <a href="">Login</a>
+                Already Registered <Link to="/LogIn">LogIn</Link>
             </p>
         </form>
     )
