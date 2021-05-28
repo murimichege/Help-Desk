@@ -18,7 +18,7 @@ import LogIn from '../src/authentication/login/LogIn'
 
 const App = () => (
     <Router>
-        <Route exact path="/" component={Landing}/>
+    <Route exact path="/" component={Landing}/>
     <Route exact path="/register" component={Register}/>
     <Route exact path="/LogIn" component={LogIn}/>
 
