@@ -18,7 +18,7 @@ function LogIn() {
 
                 <input type="text" className="form-group" placeholder="email"/>
                 
-            </div>
+            </div>  
 
             <div className = "form-group">
              <label>Password</label>
