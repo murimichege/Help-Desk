@@ -52,7 +52,7 @@ console.log(newUser)
                 LogIn
             </button>
             <p  className = "text-green">
-               Don't have an account <span><Link to="/Register">Register</Link></span>
+               Don't have an account? <span><Link to="/Register">Register</Link></span>
             </p>
         </form>
     )
