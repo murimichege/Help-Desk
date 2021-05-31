@@ -1,37 +1,58 @@
 import React, {useState} from "react";
+import {Link } from 'react-router-dom';
 
 function LogIn() {
 
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+  
     
+
+const handleSubmit = (event) => {
+    event.preventDefault()
+}
+ 
+
+const newUser = {
+    email: email,
+    password: password,
+}
+console.log(newUser)
+
+
     return(
-        <form className="">
-            <div className = "form-group">
-                <label>
-                    Full Name
-                </label>
-                <input type="text" className="form-group" placeholder="name" />
-
-            </div>
-
+        <form
+        className="w-full max-w-lg m-auto py-10 mt-10 px-10 border"
+         onSubmit={handleSubmit}>
             <div className = "form-group">
                 <label>Email</label>
-
-                <input type="text" className="form-group" placeholder="email"/>
-                
-            </div>  
+                <input type="text"
+                 className="border-solid border-gray-300 border py-2 px-4 w-full
+                 rounded text-gray-700" 
+                 placeholder="email"
+                 value={email}
+                 onChange={e => setEmail(e.target.value)}
+                 />
+            </div>
 
             <div className = "form-group">
              <label>Password</label>
-                <input type="text" className="form-group" placeholder="password"/>
+                <input type="text" 
+                className="border-solid border-gray-300 border py-2 px-4 w-full
+                rounded text-gray-700" 
+                placeholder="password"
+                onChange = {e => setPassword(e.target.value)}
+                
+                />
             </div>
-
-            <div className = "form-group">
-             <label>Password1</label>
-                <input type="text" className="form-group" placeholder="password"/>
-            </div>
-
-            <p className="forgot-password">
-                Forgot Password? <a href="">Login</a>
+            
+            <button
+            type="submit"
+            className="mt-4 w-full bg-green-400 hover:bg-green-600 text-green-100 border shadow py-3 px-6 font-semibold text-md rounded">
+                LogIn
+            </button>
+            <p  className = "text-green">
+               Don't have an account <span><Link to="/Register">Register</Link></span>
             </p>
         </form>
     )

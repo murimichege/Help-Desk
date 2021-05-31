@@ -8,12 +8,13 @@ function Register() {
         showPassword: false
     })
     const [password1, setPassword1] = useState("")
+    const [errors, setError] = useState("")
 
 const handleSubmit = (event) => {
     alert(name + "was created successfully")
     event.preventDefault()
 }
-const 
+ 
 
 const newUser = {
     name: name,
@@ -26,7 +27,7 @@ console.log(newUser)
 
     return(
         <form
-        className="w-full max-w-sm m-auto py-10 mt-10 px-10 border"
+        className="w-full max-w-lg m-auto py-10 mt-10 px-10 border"
          onSubmit={handleSubmit}>
             <div className = "form-group">
                 <label>
@@ -74,12 +75,15 @@ console.log(newUser)
                   onChange = {e => setPassword1(e.target.value)}
                   />
             </div>
-            <button className="mt-4 w-full bg-green-400 hover:bg-green-600 text-green-100 border shadow py-3 px-6 font-semibold text-md rounded">
-                Already Registered <Link to="/LogIn">LogIn</Link>
+            
+            <button
+            type="submit"
+            className="mt-4 w-full bg-green-400 hover:bg-green-600 text-green-100 border shadow py-3 px-6 font-semibold text-md rounded">
+                Register
             </button>
-            <button className="mt-4 w-full bg-green-400 hover:bg-green-600 text-green-100 border shadow py-3 px-6 font-semibold text-md rounded">
+            <p  className = "text-green">
                 Already Registered <Link to="/LogIn">LogIn</Link>
-            </button>
+            </p>
         </form>
     )
 }
