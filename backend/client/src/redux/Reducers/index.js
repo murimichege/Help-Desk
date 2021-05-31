@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux'
 
 const rootReducer = combineReducers({
-    reducer: reducer
+    auth: reducer
 })
 export default rootReducer

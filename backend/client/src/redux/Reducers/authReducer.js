@@ -22,9 +22,12 @@ const authReducer = (state = initialstate, action) => {
                     ...state,
                     loading: true
                 }
+                default:
+                    return state
     }
      
 
 }
 
-}
+
+export default authReducer
