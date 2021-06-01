@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import {Link, withRouter } from 'react-router-dom';
 import {registerUser} from '../../redux/authAction/authAction'
 import PropTypes from 'prop-types'
-import classnames from 'classnames'
+import classNames from 'classnames'
 function Register() {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
@@ -33,15 +33,16 @@ console.log(newUser)
         <form
         className="w-full max-w-lg m-auto py-10 mt-10 px-10 border"
          onSubmit={handleSubmit}>
-            <div className ="">
+            <div className ="form-group">
                 <label>
                     Full Name
                 </label>
 
                 <input
                 type="text"
-                className='border-solid border-gray-300 border py-2 px-4 w-full
-                rounded text-gray-700'
+                className={classnames("", {
+                    invalid: errors.email || errors.emailnotfound
+                  })}
             
                 autoFocus
                 value={name}

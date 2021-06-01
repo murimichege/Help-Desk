@@ -1,10 +1,17 @@
 import React from 'react'
-import _{} from ''
-function privateroute() {
+import {Route,Redirect} from 'react-router-dom'
+import PropTypes from 'prop-types'
+import {connect} from 'react-redux'
+import LogInUser from '../redux/authAction/authAction'
+function privateroute({component: rest, auth, Component}) {
     return (
-        <div>
-            
-        </div>
+        <Route
+        {...rest} render={props => (
+            LogInUser && auth ? <Redirect to=""/>
+
+        )}
+        
+        />
     )
 }
 
