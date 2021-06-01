@@ -6,7 +6,8 @@ import store from '../src/redux/store'
 import Landing from '../src/landing/landing'
 import Register from '../src/authentication/register/Register'
 import LogIn from '../src/authentication/login/LogIn'
-
+import createTicket from '../src/createTicket/createTicket'
+import Privateroute from './privateroutes/privateroute';
 
 const App = () => (
     <Provider store={store}>
@@ -14,6 +15,9 @@ const App = () => (
     <Route exact path="/" component={Landing}/>
     <Route exact path="/register" component={Register}/>
     <Route exact path="/LogIn" component={LogIn}/>
+    <Switch>
+        <Privateroute exact path="/createTicket" component={createTicket}/>
+    </Switch>
     </Router>
     </Provider>
     
