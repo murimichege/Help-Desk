@@ -1,10 +1,15 @@
 import React, {useState} from "react";
+import { connect } from "react-redux";
 import {Link } from 'react-router-dom';
+import {LogInUser} from '../../redux/authAction/authAction'
+import {connect} from 'react-redux'
+import PropTypes from 'prop-types'
 
 function LogIn() {
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [error, setError] = useState("")
   
     
 
@@ -57,4 +62,19 @@ console.log(newUser)
         </form>
     )
 }
-export default LogIn
+
+LogIn.PropTypes = {
+    LogInUser: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired,
+    error: PropTypes.object.isRequired
+}
+
+const mapStateToProps = state => ({
+    auth: state.auth,
+    error: state.error
+})
+
+export default connect(
+    mapStateToProps,
+    {LogInUser}
+)(LogIn)

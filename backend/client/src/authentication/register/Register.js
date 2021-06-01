@@ -1,5 +1,9 @@
 import React, {useState} from "react";
-import {Link } from 'react-router-dom';
+import { connect } from "react-redux";
+import {Link, withRouter } from 'react-router-dom';
+import {registerUser} from '../../redux/authAction/authAction'
+import PropTypes from 'prop-types'
+import classnames from 'classnames'
 function Register() {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
@@ -8,7 +12,7 @@ function Register() {
         showPassword: false
     })
     const [password1, setPassword1] = useState("")
-    const [errors, setError] = useState("")
+    const [error, setError] = useState("")
 
 const handleSubmit = (event) => {
     alert(name + "was created successfully")
@@ -29,15 +33,16 @@ console.log(newUser)
         <form
         className="w-full max-w-lg m-auto py-10 mt-10 px-10 border"
          onSubmit={handleSubmit}>
-            <div className = "form-group">
+            <div className ="">
                 <label>
                     Full Name
                 </label>
 
                 <input
                 type="text"
-                className="border-solid border-gray-300 border py-2 px-4 w-full
-                rounded text-gray-700"
+                className='border-solid border-gray-300 border py-2 px-4 w-full
+                rounded text-gray-700'
+            
                 autoFocus
                 value={name}
                 placeholder="name"
@@ -87,4 +92,19 @@ console.log(newUser)
         </form>
     )
 }
-export default Register
+Register.PropTypes = {
+    registerUser: PropTypes.func.isRequired,
+    error: PropTypes.object.isRequired,
+    auth:PropTypes.object.isRequired
+
+}
+
+const mapStateToProps = state => ({
+    auth:state.auth,
+    error: state.error
+})
+
+export default connect(
+    mapStateToProps,
+    {registerUser}
+)(withRouter(Register))

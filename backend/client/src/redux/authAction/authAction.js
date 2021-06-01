@@ -4,15 +4,15 @@ import jwt_decode from 'jwt-decode'
 
 import {GET_ERRORS, SET_CURRENT_USER, USER_LOADING} from '../Actiontypes'
 
-export const RegisterUser= (history, UserData) => dispatch => {
+export const registerUser = (history, UserData) => (dispatch) => {
     axios.post('/api/users/register', UserData)
     .then(res => history.push('/LogIn'))
-    .catch(err => {
+    .catch(err => 
         dispatch({
             type: GET_ERRORS,
             payload: err.response.data
         })
-    })
+    )
 }
 
 export const LogInUser = (UserData) => dispatch => {
@@ -26,12 +26,12 @@ export const LogInUser = (UserData) => dispatch => {
         // decode the token
         const decoded = jwt_decode(token)
         dispatch(setCurrentUser(decoded))
-        .catch(err => {
+        .catch(err => 
             dispatch({
                 type: GET_ERRORS,
                 payload: err.response.data
             })
-        })
+        )
 
 
     })
@@ -39,18 +39,17 @@ export const LogInUser = (UserData) => dispatch => {
     }
 
 export const setCurrentUser = (decoded) => {
-    dispatch({
+    return{
         type: SET_CURRENT_USER,
         payload: decoded
 
-    })
+    }
 }
 
 export const UserLoading = () => {
-    dispatch({
+    return{
         type: USER_LOADING  
-
-    })
+    }
 }
 
 export const LogOutUser = () => dispatch => {
