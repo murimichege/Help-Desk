@@ -1,10 +1,13 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { connect } from "react-redux";
 import {Link, withRouter } from 'react-router-dom';
 import {registerUser} from '../../redux/authAction/authAction'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
+
+
 function Register() {
+
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState({
@@ -13,12 +16,22 @@ function Register() {
     })
     const [password1, setPassword1] = useState("")
     const [error, setError] = useState("")
+    const [isAuthenticated, setisAuthenticated] = useState(false)
+
 
 const handleSubmit = (event) => {
     alert(name + "was created successfully")
     event.preventDefault()
 }
- 
+ useEffect(() => {
+     if(props.auth.isAuthenticated)
+     {
+         props.history.push('/createTicket')
+     }
+
+ },[])
+   
+    
 
 const newUser = {
     name: name,
@@ -40,10 +53,8 @@ console.log(newUser)
 
                 <input
                 type="text"
-                className={classnames("", {
-                    invalid: errors.email || errors.emailnotfound
-                  })}
-            
+                className="border-solid border-gray-300 border py-2 px-4 w-full
+                rounded text-gray-700"
                 autoFocus
                 value={name}
                 placeholder="name"
@@ -93,7 +104,8 @@ console.log(newUser)
         </form>
     )
 }
-Register.PropTypes = {
+
+Register.propTypes = {
     registerUser: PropTypes.func.isRequired,
     error: PropTypes.object.isRequired,
     auth:PropTypes.object.isRequired

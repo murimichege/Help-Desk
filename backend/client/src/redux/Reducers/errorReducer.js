@@ -3,7 +3,7 @@ const initialstate = {}
 const errorReducer = (state = initialstate, action) => {
     switch(action.type){
         case GET_ERRORS:
-            return actiion.payload
+            return action.payload
             default: 
             return state
 

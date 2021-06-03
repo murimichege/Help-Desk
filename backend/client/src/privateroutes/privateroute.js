@@ -8,7 +8,7 @@ function Privateroute({component: rest, auth, Component}) {
     return (
         <Route
         {...rest} render={props => (
-            LogInUser && auth.isAuthenticated == "true" ?  <Component {...props}/>
+            LogInUser && auth.isAuthenticated === "true" ?  <Component {...props}/>
             : 
           <Redirect to="/LogIn"/>
         )}

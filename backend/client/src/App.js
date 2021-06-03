@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import {Provider} from 'react-redux'
 import store from '../src/redux/store'
 import Landing from '../src/landing/landing'
@@ -8,8 +8,30 @@ import Register from '../src/authentication/register/Register'
 import LogIn from '../src/authentication/login/LogIn'
 import createTicket from '../src/createTicket/createTicket'
 import Privateroute from './privateroutes/privateroute';
+import jwt_decode from 'jwt-decode'
 
-const App = () => (
+export default function App(){
+
+    // Check for token to keep user logged in
+if (localStorage.jwtToken) {
+    // Set auth token header auth
+    const token = localStorage.jwtToken;
+    setAuthToken(token);
+    // Decode token and get user info and exp
+    const decoded = jwt_decode(token);
+    // Set user and isAuthenticated
+    store.dispatch(setCurrentUser(decoded));
+  // Check for expired token
+    const currentTime = Date.now() / 1000; // to get in milliseconds
+    if (decoded.exp < currentTime) {
+      // Logout user
+      store.dispatch(logoutUser());
+      // Redirect to login
+      window.location.href = "./login";
+    }
+  }
+return(
+    
     <Provider store={store}>
     <Router>
     <Route exact path="/" component={Landing}/>
@@ -21,7 +43,6 @@ const App = () => (
     </Router>
     </Provider>
     
-    
-);
+)
+};
 
-export default App;
