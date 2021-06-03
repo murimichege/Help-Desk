@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import { connect } from "react-redux";
 import {Link } from 'react-router-dom';
 import {LogInUser} from '../../redux/authAction/authAction'
-import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 
 function LogIn() {
