@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import {Link } from 'react-router-dom';
 import {LogInUser} from '../../redux/authAction/authAction'
 import PropTypes from 'prop-types'
+import { useEffect } from "react";
 
 function LogIn() {
 
@@ -23,7 +24,16 @@ const newUser = {
 }
 console.log(newUser)
 
+useEffect(() => {
+    if(nextProps.auth.isAuthenticated)
+    {
+        props.history.push('/createTicket')
+    }
+},[])
 
+props.LogInUser(UserData)
+
+  
     return(
         <form
         className="w-full max-w-lg m-auto py-10 mt-10 px-10 border"
@@ -62,7 +72,7 @@ console.log(newUser)
     )
 }
 
-LogIn.PropTypes = {
+LogIn.propTypes = {
     LogInUser: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired,
     error: PropTypes.object.isRequired
