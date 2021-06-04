@@ -1,11 +1,10 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { connect } from "react-redux";
 import {Link } from 'react-router-dom';
 import {LogInUser} from '../../redux/authAction/authAction'
 import PropTypes from 'prop-types'
-import { useEffect } from "react";
 
-function LogIn() {
+function LogIn(props, nextProps) {
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -14,6 +13,16 @@ function LogIn() {
     
 
 const handleSubmit = (event) => {
+    if(email == "")
+        {
+            alert("Enter Your Email")
+
+    }
+    else if(password == "")
+    {
+        alert("Enter your password")
+    }
+
     event.preventDefault()
 }
  
@@ -24,14 +33,15 @@ const newUser = {
 }
 console.log(newUser)
 
-useEffect(() => {
-    if(nextProps.auth.isAuthenticated)
-    {
-        props.history.push('/createTicket')
-    }
-},[])
 
-props.LogInUser(UserData)
+useEffect(() => {
+    if(props.auth.isAuthenticated)
+    {
+      props.history.push('/createTicket')
+    }
+},[props.auth.isAuthenticated])
+
+//props.LogInUser(UserData)
 
   
     return(
