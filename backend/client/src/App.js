@@ -9,6 +9,7 @@ import LogIn from '../src/authentication/login/LogIn'
 import createTicket from '../src/createTicket/createTicket'
 import Privateroute from './privateroutes/privateroute';
 import jwt_decode from 'jwt-decode'
+import setAuthToken
 
 export default function App(){
 

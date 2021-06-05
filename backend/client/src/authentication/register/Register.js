@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
 
-function Register() {
+function Register(props, nextProps) {
 
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
@@ -24,9 +24,9 @@ const handleSubmit = (event) => {
     event.preventDefault()
 }
  useEffect(() => {
-     if(props.auth.isAuthenticated)
+     if(nextProps.auth.isAuthenticated)
      {
-         props.history.push('/createTicket')
+         nextProps.history.push('/createTicket')
      }
 
  },[])
