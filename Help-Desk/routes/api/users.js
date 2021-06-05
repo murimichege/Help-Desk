@@ -36,7 +36,6 @@ router.post('/register', (req, res) => {
  // Hashing the password before saving it to the database
  bcrypt.genSalt(10,(salt,err) => {
     bcrypt.hash(newUser.password, salt, (err, hash) => {
-        if(err) throw err
         newUser.password = hash;
         newUser.save()
         .then(user => res.json(user))
