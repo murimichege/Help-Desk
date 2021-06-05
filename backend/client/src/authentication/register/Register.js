@@ -6,7 +6,11 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
 
+<<<<<<< HEAD
 function Register(props, nextProps) {
+=======
+function Register(props) {
+>>>>>>> 739f81f0e60f9fc55c1fd74218adb97018cbf616
 
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")

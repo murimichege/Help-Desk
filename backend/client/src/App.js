@@ -8,7 +8,9 @@ import Register from '../src/authentication/register/Register'
 import LogIn from '../src/authentication/login/LogIn'
 import createTicket from '../src/createTicket/createTicket'
 import Privateroute from './privateroutes/privateroute';
-import jwt_decode from 'jwt-decode'
+import jwt_decode from "jwt-decode";
+import setAuthToken from "./utils/setAuthToken";
+import {setCurrentUser, LogOutUser } from '../src/redux/authAction/authAction';
 
 export default function App(){
 
@@ -25,9 +27,9 @@ if (localStorage.jwtToken) {
     const currentTime = Date.now() / 1000; // to get in milliseconds
     if (decoded.exp < currentTime) {
       // Logout user
-      store.dispatch(logoutUser());
+      store.dispatch(LogOutUser());
       // Redirect to login
-      window.location.href = "./login";
+      window.location.href = "./LogIn";
     }
   }
 return(
