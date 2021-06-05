@@ -15,8 +15,8 @@ const UserSchema = new Schema({
         required: true
     },
     date : {
-        timestamps: true,
-        collection: 'user'
+        timestamp: true,
+        collection: 'User'
     
 
     }
@@ -24,4 +24,4 @@ const UserSchema = new Schema({
 
 
 
-module.exports = User = mongoose.model("user", UserSchema)
+module.exports = User = mongoose.model("User", UserSchema)

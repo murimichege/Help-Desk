@@ -13,12 +13,12 @@ function LogIn(props, nextProps) {
     
 
 const handleSubmit = (event) => {
-    if(email == "")
+    if(email === "")
         {
             alert("Enter Your Email")
 
     }
-    else if(password == "")
+    else if(password === "")
     {
         alert("Enter your password")
     }
@@ -34,14 +34,6 @@ const newUser = {
 console.log(newUser)
 
 
-useEffect(() => {
-    if(props.auth.isAuthenticated)
-    {
-      props.history.push('/createTicket')
-    }
-},[props.auth.isAuthenticated])
-
-//props.LogInUser(UserData)
 
   
     return(
