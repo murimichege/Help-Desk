@@ -15,8 +15,10 @@ const UserSchema = new Schema({
         required: true
     },
     date : {
-        type: Date,
-        required: true
+        timestamps: true,
+        collection: 'user'
+    
+
     }
 })
 
