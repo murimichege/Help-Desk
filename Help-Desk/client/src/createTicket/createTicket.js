@@ -23,17 +23,7 @@ function createTicket() {
                 <Card>
                 <Card.Header>New Ticket</Card.Header>
                 <Card.Body>
-                    
-                <Form.Group controlId="TicketForm.ControlInput1">
-                        <Form.Label>Name</Form.Label>      
-                        <Form.Control as="textarea"/>
-                    </Form.Group>
-
-                    <Form.Group controlId="TicketForm.ControlInput1">
-                        <Form.Label>Email Address</Form.Label>      
-                        <Form.Control type="email" placeholder="name@example.com"/>
-                    </Form.Group>
-                    
+                                
                     <Form.Group controlId="TicketForm.ControlSelect1">
                         <Form.Label>Department</Form.Label>      
                         <Form.Control as="select" multiple>
