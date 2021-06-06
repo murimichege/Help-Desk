@@ -1,5 +1,5 @@
 import React from 'react'
-import {Navbar, Nav, Container} from 'react-bootstrap'
+import {Navbar, Nav, Container, Card, Form} from 'react-bootstrap'
 function createTicket() {
     return (
         <div className = "container">
@@ -18,6 +18,64 @@ function createTicket() {
 
                </Container>
            </Navbar>
+            </div>
+            <div className="ticket-form">
+                <Card>
+                <Card.Header>New Ticket</Card.Header>
+                <Card.Body>
+                    
+                <Form.Group controlId="TicketForm.ControlInput1">
+                        <Form.Label>Name</Form.Label>      
+                        <Form.Control as="textarea"/>
+                    </Form.Group>
+
+                    <Form.Group controlId="TicketForm.ControlInput1">
+                        <Form.Label>Email Address</Form.Label>      
+                        <Form.Control type="email" placeholder="name@example.com"/>
+                    </Form.Group>
+                    
+                    <Form.Group controlId="TicketForm.ControlSelect1">
+                        <Form.Label>Department</Form.Label>      
+                        <Form.Control as="select" multiple>
+                            <option>
+                                Administration
+                            </option>
+                            <option>
+                                Finance
+                            </option>
+                            <option>
+                                Marketing
+                            </option>
+                            <option>
+                                ICT
+                            </option>
+                            <option>
+                                General
+                            </option>
+                            </Form.Control>
+                    </Form.Group>
+
+                    <Form.Group controlId="TicketForm.ControlInput1">
+                        <Form.Label>Subject</Form.Label>      
+                        <Form.Control as="textarea"/>
+                    </Form.Group>
+
+                    <Form.Group controlId="TicketForm.ControlInput1">
+                        <Form.Label>Content</Form.Label>      
+                        <Form.Control as="textarea" rows={4}/>
+                    </Form.Group>
+
+                    <Form.Group controlId="TicketForm.ControlInput1">
+                        <Form.Label>Subject</Form.Label>      
+                        <Form.Control as="textarea"/>
+                    </Form.Group>
+
+                    <Form.Group>
+                        <Form.File id="ticketFileAttachment" label="Attach a screenshot"/>
+                    </Form.Group>
+
+                </Card.Body>
+                </Card>
             </div>
           
         </div>
