@@ -2,7 +2,7 @@ import React from 'react'
 import {Navbar, Nav, Container, Card, Form} from 'react-bootstrap'
 function createTicket() {
 
-    
+    // create successful submit modal tomorrow
     return (
         <div className = "container">
             <div className="Navigation">
