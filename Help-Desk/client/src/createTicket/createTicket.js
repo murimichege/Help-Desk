@@ -1,6 +1,8 @@
 import React from 'react'
 import {Navbar, Nav, Container, Card, Form} from 'react-bootstrap'
 function createTicket() {
+
+    
     return (
         <div className = "container">
             <div className="Navigation">
@@ -23,7 +25,7 @@ function createTicket() {
                 <Card>
                 <Card.Header>New Ticket</Card.Header>
                 <Card.Body>
-                                
+                               <Form> 
                     <Form.Group controlId="TicketForm.ControlSelect1">
                         <Form.Label>Department</Form.Label>      
                         <Form.Control as="select" multiple>
@@ -63,9 +65,12 @@ function createTicket() {
                     <Form.Group>
                         <Form.File id="ticketFileAttachment" label="Attach a screenshot"/>
                     </Form.Group>
+                    <Button  type="submit"variant="success"/>
 
+                    </Form>
                 </Card.Body>
                 </Card>
+
             </div>
           
         </div>
