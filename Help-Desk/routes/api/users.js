@@ -5,8 +5,8 @@ const jwt = require("jsonwebtoken")
 const keys = require('../../config/keys')
 
 // load input validation
-const  validateRegisterInput= require('../../authentication/register')
-const  validateLoginInput = require('../../authentication/login')
+const validateRegisterInput= require('../../validation/register')
+const validateLoginInput = require('../../validation/login')
 
 // load user model
 
@@ -30,12 +30,12 @@ router.post('/register', (req, res) => {
             const newUser = new User({
                 email: req.body.email,
                 name: req.body.name,
-                password: req.body.password
+                password: req.body.password,
+                date: req.body.date
             })
  // Hashing the password before saving it to the database
  bcrypt.genSalt(10,(salt,err) => {
     bcrypt.hash(newUser.password, salt, (err, hash) => {
-        if(err) throw err
         newUser.password = hash;
         newUser.save()
         .then(user => res.json(user))

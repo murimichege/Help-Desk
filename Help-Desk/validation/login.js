@@ -28,3 +28,6 @@ module.exports = function validLogInInput(data){
         isValid : isEmpty(errors)
 }
 }
+
+
+

@@ -34,14 +34,6 @@ const newUser = {
 console.log(newUser)
 
 
-useEffect(() => {
-    if(props.auth.isAuthenticated)
-    {
-      props.history.push('/createTicket')
-    }
-},[props.auth.isAuthenticated])
-
-//props.LogInUser(UserData)
 
   
     return(
