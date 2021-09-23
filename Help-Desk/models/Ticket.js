@@ -3,6 +3,11 @@ const Schema = mongoose.Schema
 
 
 const TicketSchema = new Schema({
+    Id  : {
+        name: String,
+        required: true
+
+    },
     Title :{
         name: String,
         required: true

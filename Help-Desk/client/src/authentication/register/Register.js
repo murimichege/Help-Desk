@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from "react";
 import { connect } from "react-redux";
-import {Link, withRouter } from 'react-router-dom';
+import {Link, withRouter, useHistory } from 'react-router-dom';
 import {registerUser} from '../../redux/authAction/authAction'
 import PropTypes from 'prop-types'
-import classNames from 'classnames'
-
+//import {createTicket} from '../../createTicket/createTicket'
 
 function Register(props, nextProps) {
 
@@ -15,12 +14,16 @@ function Register(props, nextProps) {
         showPassword: false
     })
     const [password1, setPassword1] = useState("")
-    const [error, setError] = useState("")
+  //const [error, setError] = useState("")
+    const history = useHistory()
 
 
 const handleSubmit = (event) => {
     alert(name + "was created successfully")
     event.preventDefault()
+    history.push('/createTicket')
+
+
 }
  
 const newUser = {
@@ -85,10 +88,13 @@ console.log(newUser)
             
             <button
             type="submit"
-            className="mt-4 w-full bg-green-400 hover:bg-green-600 text-green-100 border shadow py-3 px-6 font-semibold text-md rounded">
+            className="mt-4 w-full bg-green-400 hover:bg-green-600 text-green-100 border shadow py-3 px-6 font-semibold text-md rounded"
+            onClick={handleSubmit}
+            >
                 Register
             </button>
             <p  className = "text-green">
+
                 Already Registered <Link to="/LogIn">LogIn</Link>
             </p>
         </form>

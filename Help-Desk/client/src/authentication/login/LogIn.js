@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { connect } from "react-redux";
-import {Link } from 'react-router-dom';
+import {Link, useHistory } from 'react-router-dom';
 import {LogInUser} from '../../redux/authAction/authAction'
 import PropTypes from 'prop-types'
 
@@ -10,7 +10,7 @@ function LogIn(props, nextProps) {
     const [password, setPassword] = useState("")
     const [error, setError] = useState("")
   
-    
+    const history = useHistory()
 
 const handleSubmit = (event) => {
     if(email === "")
@@ -24,6 +24,7 @@ const handleSubmit = (event) => {
     }
 
     event.preventDefault()
+    history.push('/createTicket')
 }
 
 

@@ -11,7 +11,8 @@ import Privateroute from './privateroutes/privateroute';
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import {setCurrentUser, LogOutUser } from '../src/redux/authAction/authAction';
-
+import Dashboard from './Admin/components/Dashboard/Dashboard'
+import Sidebar from './sidebar/sidebar'
 export default function App(){
 
     // Check for token to keep user logged in
@@ -36,11 +37,13 @@ return(
     
     <Provider store={store}>
     <Router>
+      <Sidebar/>
     <Route exact path="/" component={Landing}/>
     <Route exact path="/register" component={Register}/>
     <Route exact path="/LogIn" component={LogIn}/>
+    <Route exact path="/createTicket" component={createTicket}/>
     <Switch>
-        <Privateroute exact path="/createTicket" component={createTicket}/>
+        <Privateroute exact path="/Dashboard" component = {Dashboard}/>
     </Switch>
     </Router>
     </Provider>
